@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THREADNOVA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#0B1D3A",
+                        surface: "#142A4A",
+                        "surface-container": "#1A345C",
+                        "surface-container-low": "#162E52",
+                        "surface-container-high": "#1F3B6B",
+
+                        primary: "#F5E6C8",
+                        "primary-container": "#EAD7B7",
+
+                        secondary: "#C6A75E",
+                        "secondary-container": "#2A3F63",
+
+                        "on-background": "#F5E6C8",
+                        "on-surface": "#F5E6C8",
+                        "on-surface-variant": "#CBBFA3",
+
+                        outline: "#2A3F63",
+                        "outline-variant": "#1F3558",
+
+                        error: "#ff6b6b",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<link href="style.css" rel="stylesheet"/>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+
+<!-- ✅ NAVBAR (copy same from index.html) -->
+ <nav class="bg-[#0B1D3A] border-b border-[#2A3F63] text-primary dark:text-primary docked full-width top-0 z-50 border-b border-[#2A3F63] sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black tracking-[-0.05em] text-primary uppercase" href="#">THREADNOVA</a>
+<div class="hidden md:flex gap-6">
+<a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="index.html">HOME</a>
+<a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="shop.html">SHOP</a>
+<a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="new-drop.html">NEW DROP</a>
+<a class="text-primary font-black border-b-2 border-white pb-1 font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="review.html">REVIEW</a>
+
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="glow-btn material-symbols-outlined hover:bg-white/10 transition-all duration-100 p-2 Active: scale-95 brightness-125">search</button>
+<button class="glow-btn material-symbols-outlined hover:bg-white/10 transition-all duration-100 p-2 Active: scale-95 brightness-125">shopping_cart</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Mobile/Contextual) - Hidden by default on Desktop as per design system pivot -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-[#131313] dark:bg-[#131313] w-64 hidden lg:hidden">
+<div class="bg-[#0e0e0e] px-4 py-8">
+<p class="text-primary font-black uppercase tracking-widest text-[0.6875rem]">FREE SHIPPING ₹799+</p>
+<p class="text-[#CBBFA3] font-black uppercase tracking-widest text-[0.5rem]">MADE IN INDIA</p>
+</div>
+</aside>
+
+
+<!-- 🔥 HERO -->
+<section class="pt-32 pb-16 px-6 md:px-16 text-center">
+  <h1 class="text-5xl md:text-7xl font-black uppercase tracking-[-0.05em] text-primary mb-4">
+    Community
+  </h1>
+  <p class="text-[#CBBFA3] uppercase tracking-[0.3em] text-sm">
+    Worn by the Real Ones
+  </p>
+</section>
+
+
+<!-- 🎬 GALLERY -->
+<section class="px-4 md:px-16 pb-24">
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+    <!-- 🎬 VIDEO TILE -->
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/reel/DN0X9vqZty8/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v1.mp4"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/reel/DN0X9vqZty8/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/reels/DM2mIkMJmSk/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v2.mp4"
+          class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/reel/DM2mIkMJmSk/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/reel/DNuQ1GMYkfs/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v3.mp4"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/reel/DNuQ1GMYkfs/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/reel/DNspVZSZmb1" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v4.mp4"
+          class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/reel/DNspVZSZmb1', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/reel/DNqX_Vct-24/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v5.mp4"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/reel/DNqX_Vct-24/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/p/DNX8C6tSKd9/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v6.mp4"
+          class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/p/DNX8C6tSKd9/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/p/DNQVQ5xJNNR/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v7.mp4"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="overlay"></div>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/p/DNQVQ5xJNNR/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer open-lightbox" data-src="https://www.instagram.com/p/DNBDNyVJ-Ml/" data-type="video">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <video 
+          src="assets/v8.mp4"
+          class="w-full h-full object-cover  group-hover:scale-105 transition-all duration-700"
+          autoplay loop muted playsinline
+        ></video>
+        <div class="tile-label" onclick="window.open('https://www.instagram.com/p/DNBDNyVJ-Ml/', '_blank')">Watch →</div>
+      </div>
+    </div>
+
+    <!-- 🖼 IMAGE TILE 
+    <div class="group cursor-pointer open-lightbox" data-src="images/post1.jpg" data-type="image">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <img 
+          src=""
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+        />
+        <div class="overlay"></div>
+        <div class="tile-label">View →</div>
+      </div>
+    </div>-->
+
+
+  </div>
+
+</section>
+
+
+<!-- 🔳 LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 bg-[#0B1D3A]/95 hidden items-center justify-center z-50">
+
+  <!-- Close Button -->
+  <button id="closeLightbox" class="absolute top-6 right-6 text-[#F5E6C8] text-3xl font-bold">
+    ✕
+  </button>
+
+  <!-- Content -->
+  <div id="lightboxContent" class="max-w-4xl w-full px-4"></div>
+
+</div>
+
+
+<!-- ⚡ LIGHTBOX SCRIPT -->
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxContent = document.getElementById("lightboxContent");
+const closeBtn = document.getElementById("closeLightbox");
+
+document.querySelectorAll(".open-lightbox").forEach(item => {
+  item.addEventListener("click", () => {
+    const src = item.getAttribute("data-src");
+    const type = item.getAttribute("data-type");
+
+    if (type === "video") {
+      lightboxContent.innerHTML = `
+        <video src="${src}" autoplay controls class="rounded-lg"></video>
+      `;
+    } else {
+      lightboxContent.innerHTML = `
+        <img src="${src}" class="rounded-lg"/>
+      `;
+    }
+
+    lightbox.classList.add("active");
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+  lightboxContent.innerHTML = "";
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("active");
+    lightboxContent.innerHTML = "";
+  }
+});
+</script>
+
+
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#08172E] text-primary dark:text-primary pt-20 pb-10 w-full px-16 flex flex-col md:flex-row justify-between items-start gap-12 font-['Inter'] font-medium uppercase tracking-[0.15em] text-[0.6875rem]">
+<div class="max-w-xs">
+<h4 class="text-lg font-black text-primary mb-6">THREADNOVA</h4>
+<h5 style="font-size: 15px;"><p class="text-[#CBBFA3] normal-case tracking-normal mb-8 leading-relaxed">At Threadnova, we don’t just make clothes — we craft statements. Each piece is a fusion of bold aesthetics and premium craftsmanship, born for those who dare to express. Rooted in culture, designed for confidence, and delivered with a luxury streetwear soul.</p></h5>
+<div class="flex gap-4">
+<ul class="example-2">
+
+  <!-- Instagram -->
+  <li class="icon-content">
+    <span class="tooltip">Instagram</span>
+    <a href="https://www.instagram.com/threadnova.storee/" data-social="instagram">
+      <div class="filled"></div>
+      <!-- Instagram SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 
+        5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 1 1 0 10 5 5 0 0 1 
+        0-10zm6-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+    </a>
+  </li>
+
+  <!-- Phone -->
+  <li class="icon-content">
+    <span class="tooltip">Call</span>
+    <a href="tel:+919217369060">
+      <div class="filled"></div>
+      <!-- Phone SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 
+        1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 
+        1V21c0 .6-.4 1-1 1C10.1 22 2 13.9 2 
+        3c0-.6.4-1 1-1h3.5c.6 0 1 .4 
+        1 1 0 1.3.2 2.6.6 3.8.1.4 
+        0 .8-.3 1.1l-2.2 2.2z"/>
+      </svg>
+    </a>
+  </li>
+
+  <!-- Mail -->
+  <li class="icon-content">
+    <span class="tooltip">Email</span>
+    <a href="mailto:Threadnovastoree@gmail.com">
+      <div class="filled"></div>
+      <!-- Mail SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2 4h20v16H2V4zm10 9L4 6h16l-8 
+        7zm0 2l8-7v10H4V8l8 7z"/>
+      </svg>
+    </a>
+  </li>
+
+</ul>
+</div>
+<div>
+<p>© 2025 Threadnova. Luxury Streetwear for Every Soul.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-16">
+<div class="flex flex-col gap-4">
+<p class="text-primary font-black mb-2">SHOP</p>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">ALL ITEMS</a>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">NEW DROP</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="text-primary font-black mb-2">SUPPORT</p>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">RETURNS</a>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">SHIPPING INFO</a>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">CONTACT</a>
+</div>
+</div>
+
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THREADNOVA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#0B1D3A",
+                        surface: "#142A4A",
+                        "surface-container": "#1A345C",
+                        "surface-container-low": "#162E52",
+                        "surface-container-high": "#1F3B6B",
+
+                        primary: "#F5E6C8",
+                        "primary-container": "#EAD7B7",
+
+                        secondary: "#C6A75E",
+                        "secondary-container": "#2A3F63",
+
+                        "on-background": "#F5E6C8",
+                        "on-surface": "#F5E6C8",
+                        "on-surface-variant": "#CBBFA3",
+
+                        outline: "#2A3F63",
+                        "outline-variant": "#1F3558",
+
+                        error: "#ff6b6b",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<link href="style.css" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+
+<nav class="fixed top-0 w-full bg-[#0B1D3A] border-b border-[#2A3F63] z-50">
+
+  <div class="flex justify-between items-center px-6 py-4">
+
+    <!-- Logo -->
+    <h1 class="text-[#F5E6C8] font-bold text-lg">THREADNOVA</h1>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-8 text-[#CBBFA3]">
+      <a class="text-primary font-black border-b-2 border-white pb-1 font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="index.html">HOME</a>
+      <a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="shop.html">SHOP</a>
+      <a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="new-drop.html">NEW DROP</a>
+      <a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="review.html">REVIEW</a>
+
+    </div>
+
+    <!-- Hamburger -->
+    <button id="menuBtn" class="md:hidden text-[#F5E6C8] text-2xl">
+      ☰
+    </button>
+    <div class="flex items-center gap-6">
+    <button class="glow-btn material-symbols-outlined hover:bg-white/10 transition-all duration-100 p-2 Active: scale-95 brightness-125">search</button>
+    <button class="glow-btn material-symbols-outlined hover:bg-white/10 transition-all duration-100 p-2 Active: scale-95 brightness-125" onclick="window.location.href='cart2.html'">shopping_cart</button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex-col bg-[#142A4A] text-[#F5E6C8] px-6 py-4 space-y-4 md:hidden">
+    <a class="text-primary font-black border-b-2 border-white pb-1 font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="index.html">HOME</a>
+    <a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="shop.html">SHOP</a>
+    <a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="new-drop.html">NEW DROP</a>
+    <a class="text-gray-400 font-medium hover:text-primary transition-colors font-['Inter'] uppercase tracking-[-0.05em] text-[0.875rem] leading-[1.6]" href="review.html">REVIEW</a>
+
+  </div>
+  <script src="all.js"></script>
+</nav>
+
+
+
+<!-- Hero Section -->
+    <section class="relative h-screen w-full flex items-center justify-start overflow-hidden">
+    <img alt="Hero" class="absolute inset-0 w-full h-full object-cover" data-alt="banner" src="banner.png"/>
+    <div class="absolute inset-0 bg-[#0B1D3A]/70"></div>
+    <!-- Announcement Bar Overlay -->
+    <div class="bg-gradient-to-r from-[#0B1D3A] to-[#142A4A] text-[#CBBFA3] text-center py-3 text-sm tracking-widest">
+      FREE SHIPPING ₹799+ | MADE IN INDIA
+    </div>
+   <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full text-center px-6">
+
+    <p class="text-[#CBBFA3] text-sm md:text-lg uppercase tracking-wide md:whitespace-nowrap">
+        Not just clothing — a statement built for those who refuse to blend in.
+    </p>
+
+</div>
+</section>
+<!-- Featured Collections - Asymmetric Bento Grid -->
+<section class="bg-surface py-32 px-6 md:px-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+<!-- Large Focus -->
+<div class="md:col-span-7 relative group overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale" data-alt="close up of premium heavy cotton oversized tee texture on a model in a warehouse setting" src="products/WhatsApp Image 2026-03-31 at 10.10.15 PM.jpeg"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-10 left-10">
+<h3 class="text-4xl font-black uppercase tracking-tighter text-primary">Oversized Tees</h3>
+<a class="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mt-4 inline-block border-b border-white pb-1" href="#">View Collection</a>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-6">
+<!-- Top Right -->
+<div class="h-1/2 relative group overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="graphic streetwear design featuring futuristic typography on a black t-shirt" src="products/GRADIENTLIS_BACK.jpeg"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-2xl font-black uppercase tracking-tighter text-primary">Best Sellers</h3>
+</div>
+</div>
+
+<div class="h-1/2 relative group overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="graphic streetwear design featuring futuristic typography on a black t-shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH9fYp1y-5y4yFjf2m34m1ytjT0HA9XCXzYI5yxLT-ODZa0PYvCRnQedC-o4u6xY0uqC1b87GixXYR4--ERKeCJ-UpYtlmqoi7RV3B_lBcjJGaBaOfWVSlPvVhioAEsjHurdCTx6zNINjRoDcrn4898eXQqBUCpz7NtxRHM5Xdgwdh9Ar5JM6KwfPxRqUUf__3CoExUDuZIKFDqyO19T0apBqGBWqT7R3VA0XQsHZMoAF2dY7bQavbjLNOODO2mp7RgnxLMNpbJCI"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-2xl font-black uppercase tracking-tighter text-primary">New Drop</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Best Sellers Section -->
+<section class="py-32 bg-surface">
+<div class="px-6 md:px-16 mb-20 flex justify-between items-end">
+<div>
+<h2 class="text-5xl font-black uppercase tracking-[-0.05em]">TRENDING NOW</h2>
+<div class="h-1 w-24 bg-primary mt-4"></div>
+</div>
+<a class="text-[0.6875rem] font-bold uppercase tracking-[0.2em] border-b border-primary pb-2 hover:opacity-70 transition-opacity" href="shop.html">Browse All</a>
+</div>
+<div class="px-6 md:px-16 grid grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-8">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="model wearing a charcoal grey oversized tee standing in a dark alley with cold lighting" src="products/cosmic_back.jpeg"/>
+<span class="absolute top-4 left-4 bg-primary text-[#0B1D3A] text-[0.625rem] font-black uppercase px-3 py-1">BEST SELLER</span>
+<button class="absolute bottom-0 left-0 w-full monolith-gradient text-on-primary py-4 font-black text-[0.625rem] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="showToast()">Quick Add +</button>
+</div>
+<h3 class="text-sm font-black uppercase tracking-widest mb-1">COSMIC TEE</h3>
+<p class="text-on-surface-variant text-xs mb-3 uppercase tracking-tighter">WHITE / Oversized</p>
+<p class="text-sm font-black">₹1,499</p>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="high contrast studio photo of a white t-shirt with heavy typography across the chest" src="products/lostinspace_back.jpeg"/>
+<span class="absolute top-4 left-4 bg-error text-on-error text-[0.625rem] font-black uppercase px-3 py-1">LIMITED</span>
+<button class="absolute bottom-0 left-0 w-full monolith-gradient text-on-primary py-4 font-black text-[0.625rem] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="showToast()">Quick Add +</button>
+</div>
+<h3 class="text-sm font-black uppercase tracking-widest mb-1">LOST IN SPACE TEE</h3>
+<p class="text-on-surface-variant text-xs mb-3 uppercase tracking-tighter">WITH GRADIENT FONT/ BLACK TSHIRT</p>
+<p class="text-sm font-black">₹1,299</p>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="editorial fashion shot of a black t-shirt with minimalist back print on a model walking away" src="products/sassy_back.jpeg"/>
+<span class="absolute top-4 left-4 bg-surface-bright text-primary text-[0.625rem] font-black uppercase px-3 py-1">NEW DROP</span>
+<button class="absolute bottom-0 left-0 w-full monolith-gradient text-on-primary py-4 font-black text-[0.625rem] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300"onclick="showToast()">Quick Add +</button>
+</div>
+<h3 class="text-sm font-black uppercase tracking-widest mb-1">SASSY TEE</h3>
+<p class="text-on-surface-variant text-xs mb-3 uppercase tracking-tighter">Midnight Black</p>
+<p class="text-sm font-black">₹1,799</p>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="studio shot of a faded black vintage style t-shirt with distressed edges and heavy graphic print" src="products/throne_back.jpeg"/>
+<button class="absolute bottom-0 left-0 w-full monolith-gradient text-on-primary py-4 font-black text-[0.625rem] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300" onclick="showToast()">Quick Add +</button>
+</div>
+<h3 class="text-sm font-black uppercase tracking-widest mb-1">THRONE TEE</h3>
+<p class="text-on-surface-variant text-xs mb-3 uppercase tracking-tighter">Washed Black / Oversized</p>
+<p class="text-sm font-black">₹1,999</p>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="bg-surface py-32 border-t border-outline-variant/10">
+<div class="px-6 md:px-16 text-center mb-20">
+<h2 class="text-4xl md:text-6xl font-black uppercase tracking-[-0.05em] mb-4">WORN BY THE REAL ONES</h2>
+<p class="text-[0.6875rem] font-bold uppercase tracking-[0.4em] text-on-surface-variant">COMMUNITY ARCHIVE</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
+
+  <!-- TILE -->
+  <div class="relative aspect-square overflow-hidden group">
+
+    <video 
+      src="assets/v1.mp4"
+      class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
+      autoplay loop muted playsinline
+    ></video>
+
+    <div class="absolute inset-0 bg-[#0B1D3A]/30 group-hover:bg-transparent transition"></div>
+
+  </div>
+  <div class="relative aspect-square overflow-hidden group">
+
+    <video 
+      src="assets/v2.mp4"
+      class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
+      autoplay loop muted playsinline
+    ></video>
+
+    <div class="absolute inset-0 bg-[#0B1D3A]/30 group-hover:bg-transparent transition"></div>
+
+  </div>
+  <div class="relative aspect-square overflow-hidden group">
+
+    <video 
+      src="assets/v3.mp4"
+      class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
+      autoplay loop muted playsinline
+    ></video>
+
+
+    <div class="absolute inset-0 bg-[#0B1D3A]/30 group-hover:bg-transparent transition"></div>
+ 
+
+  </div>
+  <div class="relative aspect-square overflow-hidden group">
+
+    <video 
+      src="assets/v5.mp4"
+      class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
+      autoplay loop muted playsinline
+    ></video>
+
+
+    <div class="absolute inset-0 bg-[#0B1D3A]/30 group-hover:bg-transparent transition"></div>
+ 
+
+  </div>
+
+</div>
+<br><br>
+<div class="card">
+
+  <div class="card2">
+
+    <div class="card-title">Product Highlights</div>
+
+    <div class="card-text">
+      • 250 GSM premium cotton for lasting comfort <br><br>
+      • Bold, detailed prints that make statements
+    </div>
+
+  </div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
+
+</section>
+
+
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#08172E] text-primary dark:text-primary pt-20 pb-10 w-full px-16 flex flex-col md:flex-row justify-between items-start gap-12 font-['Inter'] font-medium uppercase tracking-[0.15em] text-[0.6875rem]">
+<div class="max-w-xs">
+<h4 class="text-lg font-black text-primary mb-6">THREADNOVA</h4>
+<h5 style="font-size: 15px;"><p class="text-[#CBBFA3] normal-case tracking-normal mb-8 leading-relaxed">At Threadnova, we don’t just make clothes — we craft statements. Each piece is a fusion of bold aesthetics and premium craftsmanship, born for those who dare to express. Rooted in culture, designed for confidence, and delivered with a luxury streetwear soul.</p></h5>
+<div class="flex gap-4">
+<ul class="example-2">
+
+  <!-- Instagram -->
+  <li class="icon-content">
+    <span class="tooltip">Instagram</span>
+    <a href="https://www.instagram.com/threadnova.storee/" data-social="instagram">
+      <div class="filled"></div>
+      <!-- Instagram SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 
+        5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 1 1 0 10 5 5 0 0 1 
+        0-10zm6-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+    </a>
+  </li>
+
+  <!-- Phone -->
+  <li class="icon-content">
+    <span class="tooltip">Call</span>
+    <a href="tel:+919217369060">
+      <div class="filled"></div>
+      <!-- Phone SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 
+        1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 
+        1V21c0 .6-.4 1-1 1C10.1 22 2 13.9 2 
+        3c0-.6.4-1 1-1h3.5c.6 0 1 .4 
+        1 1 0 1.3.2 2.6.6 3.8.1.4 
+        0 .8-.3 1.1l-2.2 2.2z"/>
+      </svg>
+    </a>
+  </li>
+
+  <!-- Mail -->
+  <li class="icon-content">
+    <span class="tooltip">Email</span>
+    <a href="mailto:Threadnovastoree@gmail.com">
+      <div class="filled"></div>
+      <!-- Mail SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2 4h20v16H2V4zm10 9L4 6h16l-8 
+        7zm0 2l8-7v10H4V8l8 7z"/>
+      </svg>
+    </a>
+  </li>
+
+</ul>
+</div>
+<div>
+<p>© 2025 Threadnova. Luxury Streetwear for Every Soul.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-16">
+<div class="flex flex-col gap-4">
+<p class="text-primary font-black mb-2">SHOP</p>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">ALL ITEMS</a>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">NEW DROP</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="text-primary font-black mb-2">SUPPORT</p>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">RETURNS</a>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">SHIPPING INFO</a>
+<a class="text-[#CBBFA3] hover:text-primary transition-colors" href="#">CONTACT</a>
+</div>
+</div>
+
+
+</footer>
+<div id="toast" class="toast">
+  <div class="toast-card">
+
+    <div class="toast-icon">✓</div>
+
+    <div class="toast-text">
+      <p class="toast-title">Added to Cart</p>
+      <p class="toast-sub">Item successfully added</p>
+    </div>
+
+  </div>
+</div>
+<script>
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+}
+</script>
+</body></html>
